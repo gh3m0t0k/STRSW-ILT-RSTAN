@@ -114,3 +114,267 @@
 }
 2024-06-11 11:18:55,830 p=112543 u=root n=ansible | PLAY RECAP *********************************************************************
 2024-06-11 11:18:55,830 p=112543 u=root n=ansible | localhost                  : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-08-30 22:30:52,921 p=10818 u=adrian n=ansible |   hosts (2):
+2025-08-30 22:30:52,921 p=10818 u=adrian n=ansible |     192.168.0.102
+2025-08-30 22:30:52,921 p=10818 u=adrian n=ansible |     192.168.2.252
+2025-08-30 22:31:09,630 p=10821 u=adrian n=ansible |   hosts (2):
+2025-08-30 22:31:09,630 p=10821 u=adrian n=ansible |     192.168.0.62
+2025-08-30 22:31:09,630 p=10821 u=adrian n=ansible |     192.168.43.129
+2025-08-30 22:32:15,745 p=10834 u=adrian n=ansible | centos1 | FAILED! => {
+    "msg": "Using a SSH password instead of a key is not possible because Host Key checking is enabled and sshpass does not support this.  Please add this host's fingerprint to your known_hosts file to manage this host."
+}
+2025-08-30 22:32:27,075 p=10844 u=adrian n=ansible |  [ERROR]: User interrupted execution
+
+2025-08-30 22:32:39,500 p=10847 u=adrian n=ansible | centos1 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: Warning: Permanently added 'centos1' (ED25519) to the list of known hosts.\r\nadrian@centos1: Permission denied (publickey,password).",
+    "unreachable": true
+}
+2025-08-30 22:33:08,088 p=10867 u=adrian n=ansible | centos1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2025-08-30 22:33:50,593 p=10966 u=adrian n=ansible | centos1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2025-08-30 22:33:58,206 p=11015 u=adrian n=ansible | centos1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2025-08-30 22:35:09,223 p=11077 u=adrian n=ansible | centos1 | FAILED! => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "msg": "'/usr/bin/apt-mark manual python3' failed: E: Could not create temporary file for /var/lib/apt/extended_states - mkstemp (13: Permission denied)\nE: Failed to write temporary StateFile /var/lib/apt/extended_states\n",
+    "rc": 100,
+    "stderr": "E: Could not create temporary file for /var/lib/apt/extended_states - mkstemp (13: Permission denied)\nE: Failed to write temporary StateFile /var/lib/apt/extended_states\n",
+    "stderr_lines": [
+        "E: Could not create temporary file for /var/lib/apt/extended_states - mkstemp (13: Permission denied)",
+        "E: Failed to write temporary StateFile /var/lib/apt/extended_states"
+    ],
+    "stdout": "",
+    "stdout_lines": []
+}
+2025-08-30 22:35:24,556 p=11180 u=adrian n=ansible | centos1 | FAILED! => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "msg": "'/usr/bin/apt-mark manual python3' failed: E: Could not create temporary file for /var/lib/apt/extended_states - mkstemp (13: Permission denied)\nE: Failed to write temporary StateFile /var/lib/apt/extended_states\n",
+    "rc": 100,
+    "stderr": "E: Could not create temporary file for /var/lib/apt/extended_states - mkstemp (13: Permission denied)\nE: Failed to write temporary StateFile /var/lib/apt/extended_states\n",
+    "stderr_lines": [
+        "E: Could not create temporary file for /var/lib/apt/extended_states - mkstemp (13: Permission denied)",
+        "E: Failed to write temporary StateFile /var/lib/apt/extended_states"
+    ],
+    "stdout": "",
+    "stdout_lines": []
+}
+2025-08-30 22:35:54,791 p=11234 u=adrian n=ansible | centos1 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Invalid/incorrect password: Permission denied, please try again.",
+    "unreachable": true
+}
+2025-08-30 22:36:04,339 p=11244 u=adrian n=ansible | centos1 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Invalid/incorrect password: Permission denied, please try again.",
+    "unreachable": true
+}
+2025-08-30 22:36:19,302 p=11254 u=adrian n=ansible | centos1 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Invalid/incorrect password: Permission denied, please try again.",
+    "unreachable": true
+}
+2025-08-30 22:36:52,867 p=11287 u=adrian n=ansible | centos1 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Invalid/incorrect password: Permission denied, please try again.",
+    "unreachable": true
+}
+2025-08-30 22:37:03,839 p=11297 u=adrian n=ansible | centos1 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Invalid/incorrect password: Permission denied, please try again.",
+    "unreachable": true
+}
+2025-08-30 22:37:35,121 p=11320 u=adrian n=ansible | centos1 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Invalid/incorrect password: Permission denied, please try again.",
+    "unreachable": true
+}
+2025-08-30 22:38:12,541 p=11330 u=adrian n=ansible | centos1 | FAILED! => {
+    "msg": "The module touch was not found in configured module paths"
+}
+2025-08-30 22:38:40,587 p=11409 u=adrian n=ansible | centos1 | FAILED! => {
+    "msg": "The module date was not found in configured module paths"
+}
+2025-08-30 22:41:38,946 p=11465 u=adrian n=ansible | ERROR! Neither the collection requirement entry key 'name', nor 'source' point to a concrete resolvable collection artifact. Also 'name' is not an FQCN. A valid collection name must be in the format <namespace>.<collection>. Please make sure that the namespace and the collection name contain characters from [a-zA-Z0-9_] only.
+
+Could not find ansible.builtin.apt.
+2025-08-30 22:44:24,218 p=11504 u=adrian n=ansible | centos1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "cache_update_time": 1756491108,
+    "cache_updated": false,
+    "changed": false
+}
+2025-08-30 22:45:57,400 p=11844 u=adrian n=ansible | centos1 | CHANGED => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": true,
+    "checksum": "c7a0115d500678443c910df6e13dffecdfb6e224",
+    "dest": "/tmp/ansible-test",
+    "gid": 0,
+    "group": "root",
+    "md5sum": "cb8af859429616b833c146e151adc68f",
+    "mode": "0644",
+    "owner": "root",
+    "size": 294,
+    "src": "/root/.ansible/tmp/ansible-tmp-1756583156.5147965-11848-62817127710852/source",
+    "state": "file",
+    "uid": 0
+}
+2025-08-30 22:47:17,782 p=12171 u=adrian n=ansible | centos1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "checksum": "c7a0115d500678443c910df6e13dffecdfb6e224",
+    "dest": "/tmp/ansible-test",
+    "gid": 0,
+    "group": "root",
+    "mode": "0644",
+    "owner": "root",
+    "path": "/tmp/ansible-test",
+    "size": 294,
+    "state": "file",
+    "uid": 0
+}
+2025-08-30 22:57:04,501 p=12794 u=adrian n=ansible | ERROR! 'netapp.ontap.na_ontap_info' is not a valid attribute for a Play
+
+The error appears to be in '/home/adrian/ansible-workshop/ontap_info.yml': line 1, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+- name: Get NetApp info as Cluster Admin (Password Authentication)
+  ^ here
+
+2025-08-30 22:57:46,807 p=12804 u=adrian n=ansible | ERROR! 'netapp.ontap.na_ontap_info' is not a valid attribute for a Play
+
+The error appears to be in '/home/adrian/ansible-workshop/ontap_info.yml': line 1, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+- name: Info
+  ^ here
+
+2025-08-30 22:58:25,427 p=12819 u=adrian n=ansible | ERROR! 'netapp.ontap.na_ontap_info' is not a valid attribute for a Play
+
+The error appears to be in '/home/adrian/ansible-workshop/ontap_info.yml': line 2, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+#!/usr/bin/env ansible-playbook
+- name: Info
+  ^ here
+
+2025-08-30 22:59:35,112 p=12826 u=adrian n=ansible | ERROR! 'netapp.ontap.na_ontap_info' is not a valid attribute for a Play
+
+The error appears to be in '/home/adrian/ansible-workshop/ontap_info.yml': line 22, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+- name: Info
+  ^ here
+
+2025-08-30 23:00:08,819 p=12831 u=adrian n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  did not find expected key
+
+The error appears to be in '/home/adrian/ansible-workshop/ontap_info.yml': line 22, column 4, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+   - name: Info
+   ^ here
+
+2025-08-30 23:00:26,385 p=12840 u=adrian n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  did not find expected '-' indicator
+
+The error appears to be in '/home/adrian/ansible-workshop/ontap_info.yml': line 21, column 1, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+tasks:
+^ here
+
+2025-08-30 23:00:50,251 p=12847 u=adrian n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  did not find expected '-' indicator
+
+The error appears to be in '/home/adrian/ansible-workshop/ontap_info.yml': line 21, column 2, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+ tasks:
+ ^ here
+
+2025-08-30 23:01:31,188 p=12852 u=adrian n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  did not find expected '-' indicator
+
+The error appears to be in '/home/adrian/ansible-workshop/ontap_info.yml': line 21, column 2, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+ tasks:
+ ^ here
+
+2025-08-30 23:02:24,159 p=12861 u=adrian n=ansible | PLAY [localhost] **************************************************************************************************************************************************************************************************
+2025-08-30 23:02:24,895 p=12861 u=adrian n=ansible | TASK [Info] *******************************************************************************************************************************************************************************************************
+2025-08-30 23:02:24,896 p=12861 u=adrian n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: netapp_lib.api.zapi.zapi.NaApiError: NetApp API failed. Reason - URL error:URLError(gaierror(-3, 'Temporary failure in name resolution'))
+2025-08-30 23:02:24,897 p=12861 u=adrian n=ansible | [WARNING]: The module only supports ZAPI and is deprecated, and will no longer work with newer versions of ONTAP when ONTAPI is deprecated in CY22-Q4
+
+2025-08-30 23:02:24,897 p=12861 u=adrian n=ansible | [WARNING]: netapp.ontap.na_ontap_rest_info should be used instead.
+
+2025-08-30 23:02:24,897 p=12861 u=adrian n=ansible | [WARNING]: With version 22.0.0 ONTAPI (ZAPI) has been deprecated. The final ONTAP version to support ZAPI is ONTAP 9.13.1.  ZAPI calls in these modules will continue to work for ONTAP versions that supports
+ZAPI.  You can update your playbook to use REST by adding use_rest: always to your playbook.  More information can be found at: https://github.com/ansible-collections/netapp.ontap
+
+2025-08-30 23:02:24,898 p=12861 u=adrian n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "msg": "Error calling API system-get-ontapi-version: NetApp API failed. Reason - URL error:URLError(gaierror(-3, 'Temporary failure in name resolution'))"}
+2025-08-30 23:02:24,899 p=12861 u=adrian n=ansible | PLAY RECAP ********************************************************************************************************************************************************************************************************
+2025-08-30 23:02:24,900 p=12861 u=adrian n=ansible | localhost                  : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   

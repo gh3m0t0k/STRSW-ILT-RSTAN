@@ -1,5 +1,5 @@
-clustername: cluster1 # Cluster Name
-node1name: cluster1-01
+clustername: netapp-local # Cluster Name
+node1name: netapp-local
 node2name: cluster1-02
 ntpservers: 192.168.0.253 # Time Server
 
