@@ -1,0 +1,116 @@
+2024-06-10 05:03:23,844 p=54559 u=root n=ansible |   hosts (1):
+2024-06-10 05:03:23,845 p=54559 u=root n=ansible |     192.168.0.102
+2024-06-10 05:05:20,465 p=54606 u=root n=ansible |   hosts (2):
+2024-06-10 05:05:20,465 p=54606 u=root n=ansible |     192.168.0.102
+2024-06-10 05:05:20,465 p=54606 u=root n=ansible |     192.168.0.101
+2024-06-10 05:05:34,621 p=54618 u=root n=ansible |   hosts (2):
+2024-06-10 05:05:34,621 p=54618 u=root n=ansible |     192.168.0.62
+2024-06-10 05:05:34,621 p=54618 u=root n=ansible |     192.168.0.61
+2024-06-10 05:05:48,401 p=54621 u=root n=ansible |   hosts (1):
+2024-06-10 05:05:48,401 p=54621 u=root n=ansible |     centos1
+2024-06-10 05:06:01,334 p=54624 u=root n=ansible |   hosts (4):
+2024-06-10 05:06:01,335 p=54624 u=root n=ansible |     192.168.0.61
+2024-06-10 05:06:01,335 p=54624 u=root n=ansible |     192.168.0.62
+2024-06-10 05:06:01,335 p=54624 u=root n=ansible |     centos1
+2024-06-10 05:06:01,335 p=54624 u=root n=ansible |     centos2
+2024-06-10 05:34:30,181 p=57097 u=root n=ansible | PLAY [NetApp Cluster1 System Setup] ********************************************
+2024-06-10 05:34:36,602 p=57097 u=root n=ansible | TASK [Create and Online New Data Aggregate Node1] ******************************
+2024-06-10 05:34:36,605 p=57097 u=root n=ansible | changed: [localhost] => (item={'name': 'aggr1_cluster1_01_data', 'node': 'cluster1-01', 'diskcount': 13})
+2024-06-10 05:34:38,544 p=57097 u=root n=ansible | changed: [localhost] => (item={'name': 'aggr1_cluster1_02_data', 'node': 'cluster1-02', 'diskcount': 13})
+2024-06-10 05:34:49,615 p=57097 u=root n=ansible | TASK [Create Vserver] **********************************************************
+2024-06-10 05:34:49,615 p=57097 u=root n=ansible | changed: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster1_01_data', 'aggr_list': 'aggr1_cluster1_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.0.253', 'domain': 'demo.netapp.com'})
+2024-06-10 05:34:50,831 p=57097 u=root n=ansible | TASK [Create NFS LIF Node1] ****************************************************
+2024-06-10 05:34:50,831 p=57097 u=root n=ansible | changed: [localhost] => (item={'name': 'nfs_lif01', 'ip_addr': '192.168.0.141', 'netmask': '255.255.255.0', 'node': 'cluster1-01', 'vserver': 'svm1', 'home': 'e0c'})
+2024-06-10 05:34:51,794 p=57097 u=root n=ansible | changed: [localhost] => (item={'name': 'nfs_lif02', 'ip_addr': '192.168.0.142', 'netmask': '255.255.255.0', 'node': 'cluster1-02', 'vserver': 'svm1', 'home': 'e0c'})
+2024-06-10 05:34:52,723 p=57097 u=root n=ansible | TASK [Start NFS] ***************************************************************
+2024-06-10 05:34:52,724 p=57097 u=root n=ansible | changed: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster1_01_data', 'aggr_list': 'aggr1_cluster1_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.0.253', 'domain': 'demo.netapp.com'})
+2024-06-10 05:34:53,596 p=57097 u=root n=ansible | TASK [Add NFS Export Rule Under Default Policy] ********************************
+2024-06-10 05:34:53,597 p=57097 u=root n=ansible | changed: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster1_01_data', 'aggr_list': 'aggr1_cluster1_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.0.253', 'domain': 'demo.netapp.com'})
+2024-06-10 05:34:54,457 p=57097 u=root n=ansible | TASK [Add DNS Settings to svm] *************************************************
+2024-06-10 05:34:54,457 p=57097 u=root n=ansible | changed: [localhost] => (item={'name': 'svm1', 'rootvol': 'svm1_root', 'rootaggr': 'aggr1_cluster1_01_data', 'aggr_list': 'aggr1_cluster1_01_data', 'allowed_protocols': 'nfs', 'dns_servers': '192.168.0.253', 'domain': 'demo.netapp.com'})
+2024-06-10 05:34:57,616 p=57097 u=root n=ansible | TASK [Create Volumes] **********************************************************
+2024-06-10 05:34:57,616 p=57097 u=root n=ansible | changed: [localhost] => (item={'name': 'vol1', 'size': 1, 'aggr': 'aggr1_cluster1_01_data', 'vserver': 'svm1', 'security_style': 'unix'})
+2024-06-10 05:34:59,197 p=57097 u=root n=ansible | changed: [localhost] => (item={'name': 'vol2', 'size': 2, 'aggr': 'aggr1_cluster1_01_data', 'vserver': 'svm1', 'security_style': 'unix'})
+2024-06-10 05:35:01,248 p=57097 u=root n=ansible | changed: [localhost] => (item={'name': 'vol3', 'size': 3, 'aggr': 'aggr1_cluster1_01_data', 'vserver': 'svm1', 'security_style': 'unix'})
+2024-06-10 05:35:01,251 p=57097 u=root n=ansible | [WARNING]: Cannot perform actions: modify when volume is offline.
+
+2024-06-10 05:35:01,266 p=57097 u=root n=ansible | PLAY RECAP *********************************************************************
+2024-06-10 05:35:01,266 p=57097 u=root n=ansible | localhost                  : ok=7    changed=7    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-06-10 08:21:55,714 p=62151 u=root n=ansible | ERROR! the playbook: create_volume could not be found
+2024-06-10 08:21:59,111 p=62157 u=root n=ansible | PLAY [localhost] ***************************************************************
+2024-06-10 08:22:01,103 p=62157 u=root n=ansible | TASK [Create primary SVM] ******************************************************
+2024-06-10 08:22:01,104 p=62157 u=root n=ansible | [WARNING]: Cannot perform actions: modify when volume is offline.
+
+2024-06-10 08:22:01,104 p=62157 u=root n=ansible | changed: [localhost]
+2024-06-10 08:22:01,120 p=62157 u=root n=ansible | PLAY RECAP *********************************************************************
+2024-06-10 08:22:01,120 p=62157 u=root n=ansible | localhost                  : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-06-10 08:25:56,750 p=62652 u=root n=ansible | PLAY [localhost] ***************************************************************
+2024-06-10 08:25:57,819 p=62652 u=root n=ansible | TASK [Create primary SVM] ******************************************************
+2024-06-10 08:25:57,820 p=62652 u=root n=ansible | changed: [localhost]
+2024-06-10 08:25:57,837 p=62652 u=root n=ansible | PLAY RECAP *********************************************************************
+2024-06-10 08:25:57,838 p=62652 u=root n=ansible | localhost                  : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-06-10 08:29:04,313 p=62888 u=root n=ansible | PLAY [localhost] ***************************************************************
+2024-06-10 08:29:04,907 p=62888 u=root n=ansible | TASK [Create primary SVM] ******************************************************
+2024-06-10 08:29:04,909 p=62888 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "msg": "Unsupported parameters for (na_ontap_cifs) module: security_style. Supported parameters include: access_based_enumeration, allow_unencrypted_access, browsable, cert_filepath, change_notify, comment, continuously_available, encryption, feature_flags, force_ontap_version, home_directory, hostname, http_port, https, key_filepath, name, namespace_caching, ontapi, oplocks, password, path, share_properties, show_previous_versions, show_snapshot, state, symlink_properties, unix_symlink, use_rest, username, validate_certs, vscan_fileop_profile, vserver (pass, share_name, user)."}
+2024-06-10 08:29:04,911 p=62888 u=root n=ansible | PLAY RECAP *********************************************************************
+2024-06-10 08:29:04,911 p=62888 u=root n=ansible | localhost                  : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-06-10 08:29:27,151 p=62911 u=root n=ansible | PLAY [localhost] ***************************************************************
+2024-06-10 08:29:28,007 p=62911 u=root n=ansible | TASK [Create primary SVM] ******************************************************
+2024-06-10 08:29:28,009 p=62911 u=root n=ansible | changed: [localhost]
+2024-06-10 08:29:28,030 p=62911 u=root n=ansible | PLAY RECAP *********************************************************************
+2024-06-10 08:29:28,031 p=62911 u=root n=ansible | localhost                  : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-06-10 09:46:05,524 p=65055 u=root n=ansible | PLAY [localhost] ***************************************************************
+2024-06-10 09:46:06,128 p=65055 u=root n=ansible | TASK [Create volume on primary SVM] ********************************************
+2024-06-10 09:46:06,129 p=65055 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "msg": "Unsupported parameters for (na_ontap_qtree) module: comment. Supported parameters include: cert_filepath, export_policy, feature_flags, flexvol_name, force_delete, force_ontap_version, from_name, hostname, http_port, https, key_filepath, name, ontapi, oplocks, password, security_style, state, time_out, unix_group, unix_permissions, unix_user, use_rest, username, validate_certs, vserver, wait_for_completion (pass, user)."}
+2024-06-10 09:46:06,130 p=65055 u=root n=ansible | PLAY RECAP *********************************************************************
+2024-06-10 09:46:06,130 p=65055 u=root n=ansible | localhost                  : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-06-10 09:46:23,315 p=65078 u=root n=ansible | PLAY [localhost] ***************************************************************
+2024-06-10 09:46:24,446 p=65078 u=root n=ansible | TASK [Create volume on primary SVM] ********************************************
+2024-06-10 09:46:24,447 p=65078 u=root n=ansible | changed: [localhost]
+2024-06-10 09:46:24,475 p=65078 u=root n=ansible | PLAY RECAP *********************************************************************
+2024-06-10 09:46:24,475 p=65078 u=root n=ansible | localhost                  : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-06-10 09:49:45,372 p=65162 u=root n=ansible | PLAY [localhost] ***************************************************************
+2024-06-10 09:49:45,994 p=65162 u=root n=ansible | TASK [Create volume on primary SVM] ********************************************
+2024-06-10 09:49:45,995 p=65162 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "msg": "value of protocol must be one or more of: any, nfs, nfs3, nfs4, cifs, flexcache. Got no match for: nfsv3"}
+2024-06-10 09:49:45,997 p=65162 u=root n=ansible | PLAY RECAP *********************************************************************
+2024-06-10 09:49:45,997 p=65162 u=root n=ansible | localhost                  : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-06-10 09:50:15,386 p=65188 u=root n=ansible | PLAY [localhost] ***************************************************************
+2024-06-10 09:50:16,233 p=65188 u=root n=ansible | TASK [Create volume on primary SVM] ********************************************
+2024-06-10 09:50:16,235 p=65188 u=root n=ansible | changed: [localhost]
+2024-06-10 09:50:16,261 p=65188 u=root n=ansible | PLAY RECAP *********************************************************************
+2024-06-10 09:50:16,261 p=65188 u=root n=ansible | localhost                  : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-06-11 10:23:26,391 p=110685 u=root n=ansible | PLAY [localhost] ***************************************************************
+2024-06-11 10:23:27,239 p=110685 u=root n=ansible | TASK [Create an s3 user] *******************************************************
+2024-06-11 10:23:27,240 p=110685 u=root n=ansible | changed: [localhost]
+2024-06-11 10:23:27,266 p=110685 u=root n=ansible | TASK [print variables] *********************************************************
+2024-06-11 10:23:27,267 p=110685 u=root n=ansible | ok: [localhost] => {
+    "msg": "Access Key UZWIG42E1M6GPIOU6FXW and Secret Key 28N2BB2FPpe9lxzMC91cd9pp3_yPi4Ysa9B2QYM_"
+}
+2024-06-11 10:23:27,295 p=110685 u=root n=ansible | TASK [Check the result] ********************************************************
+2024-06-11 10:23:27,296 p=110685 u=root n=ansible | ok: [localhost] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+2024-06-11 10:23:27,309 p=110685 u=root n=ansible | PLAY RECAP *********************************************************************
+2024-06-11 10:23:27,309 p=110685 u=root n=ansible | localhost                  : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-06-11 10:26:16,827 p=111163 u=root n=ansible | PLAY [localhost] ***************************************************************
+2024-06-11 10:26:35,575 p=111163 u=root n=ansible | TASK [Create a S3 bucket] ******************************************************
+2024-06-11 10:26:35,576 p=111163 u=root n=ansible | changed: [localhost]
+2024-06-11 10:26:35,605 p=111163 u=root n=ansible | PLAY RECAP *********************************************************************
+2024-06-11 10:26:35,605 p=111163 u=root n=ansible | localhost                  : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-06-11 11:18:54,996 p=112543 u=root n=ansible | PLAY [localhost] ***************************************************************
+2024-06-11 11:18:55,744 p=112543 u=root n=ansible | TASK [Create an s3 user] *******************************************************
+2024-06-11 11:18:55,746 p=112543 u=root n=ansible | ok: [localhost]
+2024-06-11 11:18:55,778 p=112543 u=root n=ansible | TASK [print variables] *********************************************************
+2024-06-11 11:18:55,779 p=112543 u=root n=ansible | ok: [localhost] => {
+    "msg": "Access Key  and Secret Key "
+}
+2024-06-11 11:18:55,828 p=112543 u=root n=ansible | TASK [Check the result] ********************************************************
+2024-06-11 11:18:55,829 p=112543 u=root n=ansible | fatal: [localhost]: FAILED! => {
+    "assertion": "result.access_key",
+    "changed": false,
+    "evaluated_to": false,
+    "msg": "Assertion failed"
+}
+2024-06-11 11:18:55,830 p=112543 u=root n=ansible | PLAY RECAP *********************************************************************
+2024-06-11 11:18:55,830 p=112543 u=root n=ansible | localhost                  : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
